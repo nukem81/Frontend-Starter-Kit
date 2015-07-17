@@ -1,0 +1,20 @@
+{
+  "name": "frontend-starter-kit",
+  "version": "0.0.1",
+  "authors": [
+    "Marco Malagoli <malagolim@gmail.com>"
+  ],
+  "description": "Compile a custom Bootstrap stylesheet",
+  "license": "GPL-2.0+",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5",
+    "fontawesome": "~4.3.0"
+  }
+}

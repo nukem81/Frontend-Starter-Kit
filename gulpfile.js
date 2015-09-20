@@ -32,7 +32,7 @@ gulp.task('styles', function () {
 		sourcemap: (gutil.env.prod) ? false: true
 	})
 	.on('error', function (error){
-		console.log('Error:', err.message);
+		console.log('Error:', error.message);
 	})
 	.pipe(autoprefixer('last 2 version'))
 	.pipe(concat('styles.css'))

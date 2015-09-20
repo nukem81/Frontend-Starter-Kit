@@ -1,7 +1,6 @@
 var gulp = require('gulp'), 
 	gutil = require('gulp-util'),
 	sass = require('gulp-ruby-sass') ,
-	notify = require('gulp-notify') ,
 	bower = require('gulp-bower'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),

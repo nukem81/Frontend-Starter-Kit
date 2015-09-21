@@ -14,8 +14,8 @@ var gulp = require('gulp'), 
 
 // Define paths
 var basePaths = {
-	src: '_src/',
-	dest: '_dist/',
+	src: 'Source/',
+	dest: 'Build/',
 	bower: 'bower_components/'
 };
 

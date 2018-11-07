@@ -1,6 +1,6 @@
 var gulp = require('gulp'), 
 	gutil = require('gulp-util'),
-	sass = require('gulp-ruby-sass') ,
+	sass = require('gulp-sass') ,
 	bower = require('gulp-bower'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),
@@ -11,6 +11,7 @@ var gulp = require('gulp'), 
 	imagemin = require('gulp-imagemin'),
 	sourcemaps = require('gulp-sourcemaps');
 
+	sass.compiler = require('node-sass');
 
 // Define paths
 var basePaths = {
@@ -21,24 +22,22 @@ var basePaths = {
 
 // Compile stylesheet
 gulp.task('styles', function () {
-	return sass(basePaths.src+'assets/scss/styles.scss', {
-		loadPath: [
-			basePaths.bower + 'bootstrap-sass-official/assets/stylesheets',
-			basePaths.bower +'fontawesome/scss',
-		],
-		style: (gutil.env.prod) ? 'compressed': 'expanded',
-		precision: 10,
-		sourcemap: (gutil.env.prod) ? false: true
-	})
-	.on('error', function (error){
-		console.log('Error:', error.message);
-	})
-	.pipe(autoprefixer('last 2 version'))
-	.pipe(concat('styles.css'))
-	.pipe(gulpif(gutil.env.prod, rename({suffix: '.min'})))
-	.pipe(gulpif(gutil.env.prod, minifyCSS()))
-	.pipe(gulpif(gutil.env.prod, gutil.noop(), sourcemaps.write()))
-	.pipe(gulp.dest(basePaths.dest+'assets/css'));
+	return gulp.src(basePaths.src+'assets/scss/styles.scss')
+		.pipe(gulpif(gutil.env.prod, gutil.noop(), sourcemaps.init()))
+		.pipe(sass({
+			includePaths: [
+				basePaths.bower + 'bootstrap-sass-official/assets/stylesheets',
+				basePaths.bower +'fontawesome/scss',
+			],
+			outputStyle: (gutil.env.prod) ? 'compressed': 'expanded',
+			precision: 10,
+		}).on('error', sass.logError))
+		.pipe(autoprefixer('last 2 version'))
+		.pipe(concat('styles.css'))
+		.pipe(gulpif(gutil.env.prod, rename({suffix: '.min'})))
+		.pipe(gulpif(gutil.env.prod, minifyCSS()))
+		.pipe(gulpif(gutil.env.prod, gutil.noop(), sourcemaps.write()))
+		.pipe(gulp.dest(basePaths.dest+'assets/css'));
 });
 
 

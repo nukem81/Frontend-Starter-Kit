@@ -5,26 +5,19 @@
 @import 'bootstrap';
 
 // Font Awesome
-@import "font-awesome"; 
+$fa-font-path: "../fonts";
+
+@import 'fontawesome'; 
+@import 'regular';
+@import 'brands';
+
 
 // Custom styles
 body {
-	padding-top: 70px;
-	padding-bottom: 30px;
+	padding-top: 5rem;
 }
 
-.theme-dropdown .dropdown-menu {
-	position: static;
-	display: block;
-	margin-bottom: 20px;
+.starter-template {
+	padding: 3rem 1.5rem;
+	text-align: center;
 }
-
-.theme-showcase { 
-	> p > .btn {
-		margin: 5px 0;
-	}
-	.navbar .container {
-		width: auto;
-	}
-}
-

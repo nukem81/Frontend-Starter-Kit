@@ -26,8 +26,8 @@ gulp.task('styles', function () {
 		.pipe(gulpif(gutil.env.prod, gutil.noop(), sourcemaps.init()))
 		.pipe(sass({
 			includePaths: [
-				basePaths.bower + 'bootstrap-sass-official/assets/stylesheets',
-				basePaths.bower +'fontawesome/scss',
+				basePaths.bower + 'bootstrap/scss',
+				basePaths.bower +'Font-Awesome/web-fonts-with-css/scss',
 			],
 			outputStyle: (gutil.env.prod) ? 'compressed': 'expanded',
 			precision: 10,
@@ -41,11 +41,11 @@ gulp.task('styles', function () {
 });
 
 
-// Copy Bootstrap and FontAwesome fonts
+// Copy FontAwesome fonts
 gulp.task('fonts', function() { 
 	return gulp.src([
-			basePaths.bower + 'fontawesome/fonts/**',
-			basePaths.bower + 'bootstrap-sass-official/assets/fonts/**',			
+			basePaths.src + 'assets/fonts/**',
+			basePaths.bower + 'Font-Awesome/web-fonts-with-css/webfonts/**',
 		]) 
 		.pipe(gulp.dest(basePaths.dest+'assets/fonts'));
 });
@@ -54,8 +54,8 @@ gulp.task('fonts', function() { 
 // Copy JQuery and Bootstrap javascripts
 gulp.task('scripts', function(){
 	gulp.src([ 
-		basePaths.bower + 'jquery/dist/jquery.js',
-		basePaths.bower + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
+		basePaths.bower + 'jQuery/dist/jquery.slim.js',
+		basePaths.bower + 'bootstrap/dist/js/bootstrap.bundle.js',
 		basePaths.src + 'assets/js/main.js',
 		basePaths.src + 'assets/js/*.js'
 	])

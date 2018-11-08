@@ -3,7 +3,7 @@
 This project aims to simplifiy the process for frontend development. It provides the following tasks:
 
 - Build a customized version of [Bootstrap](http://getbootstrap.com/)
-- Include [FontAwesome](http://fortawesome.github.io/Font-Awesome/)
+- Include the free version of [FontAwesome](http://fortawesome.github.io/Font-Awesome/)
 - Compress and minify all assets
 
 ## Installation and usage

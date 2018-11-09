@@ -9,5 +9,5 @@ This project aims to simplifiy the process for frontend development. It provides
 ## Installation and usage
 
 1. Clone this repo.
-2. cd into the directory and run `npm install` and `bower install`
+2. cd into the directory and run `yarn install`
 3. Run `gulp build` or `gulp` and it will pull in all dependencies and compile your assets. To enabling compression use the --prod flag

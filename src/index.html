@@ -7,9 +7,9 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>Starter Template for Bootstrap</title>
+	<title><%= htmlWebpackPlugin.options.title %></title>
 
-	<link href="Build/assets/css/styles.css" rel="stylesheet">
+	<link href="<%=htmlWebpackPlugin.files.chunks.main.css %>" rel="stylesheet">
 
 </head>
 <body role="document">
@@ -32,7 +32,7 @@
 					<a class="nav-link disabled" href="#">Disabled</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown01">
 						<a class="dropdown-item" href="#">Action</a>
 						<a class="dropdown-item" href="#">Another action</a>
@@ -51,9 +51,11 @@
 		<div class="starter-template">
 			<h1>Bootstrap starter template</h1>
 			<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+			<h2><i class="fab fa-font-awesome"></i> Font Awesome</h2>
+			<p class="lead">The web's most popular icon set and toolkit</p>
 		</div>
 	</main>
 
-    <script src="Build/assets/js/main.js"></script>
+	<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

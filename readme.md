@@ -71,12 +71,11 @@ There are five defined tasks. These tasks are described below:
 └── yarn.lock
 ```
 
-> _Notes:_
-> You can add more `*.js` files and/or folder in `src/js/`
+> _Note A: You can add more `*.js` files and/or folder in `src/js/`_
 >
-> You can add more `*.scss` files and/or folder in `src/scss/`
+> _Note B: You can add more `*.scss` files and/or folder in `src/scss/`_
 >
-> All files in `src/public/` will be copied to `dist/public/`. Images will also be compressed.
+> _Note C: All files and/or folders in `src/public/` will be copied to `dist/public/`. Images will also be compressed_
 
 ## Example
 
